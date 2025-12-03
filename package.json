@@ -1,0 +1,28 @@
+{"name":"code-stats-extension",
+"displayName":"Code Statistics Per File",
+"description":"A simple extension for Visual Studio Code that analyzes the current file and outputs statistics",
+"version":"1.0.1",
+"publisher":"kaparov-igor",
+"repository": {
+  "type": "git",
+  "url": "https://github.com/superturbik/Code-Statistics-Plugin"
+},
+"engines": {
+  "vscode": "^1.106.0"
+},
+"categories":["Other"],
+"main":"./out/extension.js",
+"contributes":{
+    "commands":[{
+        "command":"codeStats.analyzeFile",
+        "title":"Analyze current file (Code Stats)"
+        }]
+    },
+"scripts":{
+    "vscode:prepublish":"npm run compile",
+    "compile":"tsc -p ./",
+    "watch":"tsc -watch -p ./",
+    "pretest":"npm run compile",
+    "test":"node ./out/test/runTest.js"
+},
+"devDependencies":{"@types/vscode":"^1.106.1","typescript":"^5.0.0"}}
